@@ -2,33 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour {
-    
-    //private GameObject floor;
-	// Use this for initialization
-	void Start () {
-        
-        //floor = GameObject.Find("Floor");
-	}
+public class Trigger : MonoBehaviour
+{
+    public GameObject sphere;
 
-    // Update is called once per frame
+    void Start()
+    {
+
+    }
+
+    
     void Update()
     {
-     // OnTriggerEnter(sphere.GetComponent<SphereCollider>());
+       
     }
 
-    private void OnTriggerEnter(Collider other )
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(other.gameObject.name);
-        Debug.Log(other.gameObject);
-        if ((other.gameObject.name) != (null))
+        if ((collision.gameObject) != (null))
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
+            Debug.Log("Взорвалось");
         }
-        Debug.Log(other.gameObject);
-        Debug.Log(other.gameObject.name);
     }
-
-    
-
 }
